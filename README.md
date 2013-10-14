@@ -8,17 +8,16 @@ Because I was tired of splitting my code into `-prepareForSegue:`.
 
 ## Example usage:
 
-	  [self ms_performSegueWithIdentifier:@"NewPushSegue" sender:self prepareBlock:^(UIStoryboardSegue *segue) {
-      // do the staff you used to do in prepareForSegue:
-      NextViewController *nextViewController = segue.destinationViewController;
-      [productsViewController initializeWithSetup:setup];
+    [self ms_performSegueWithIdentifier:@"NewPushSegue" sender:self prepareBlock:^(UIStoryboardSegue *segue) {
+        // do the staff you used to do in prepareForSegue:
+        NextViewController *nextViewController = segue.destinationViewController;
+        [productsViewController initializeWithSetup:setup];
     }];
 
 Then in `-prepareForSegue:` just call the handler, without writing nasty if-then-else:
 
-    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-    {
-      [self ms_handlePerformedSegue:segue];
+    - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+        [self ms_handlePerformedSegue:segue];
     }
 
 ## Contact
