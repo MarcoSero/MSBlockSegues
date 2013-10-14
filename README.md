@@ -4,7 +4,7 @@ UIViewController's category to use segues in the way they should have been imple
 
 ## Why
 
-Because I was tired of splitting my code into `-prepareForSegue:`.
+Because I was tired of splitting my code into `-prepareForSegue:sender:`.
 
 ## Example usage:
 
@@ -14,7 +14,7 @@ Because I was tired of splitting my code into `-prepareForSegue:`.
         [productsViewController initializeWithSetup:setup];
     }];
 
-Then in `-prepareForSegue:` just call the handler, without writing nasty if-then-else:
+Then in `-prepareForSegue:sender:` just call the handler, without writing nasty if-then-else:
 
     - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
         [self ms_handlePerformedSegue:segue];
